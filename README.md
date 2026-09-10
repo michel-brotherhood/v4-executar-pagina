@@ -2,13 +2,14 @@
 
 Landing page estática recriada a partir da referência visual da V4 Company.
 
-## Cloudflare Pages
+## Cloudflare Pages / Workers Static Assets
 
-Use estas configurações ao conectar este repositório:
+Configuração recomendada ao conectar este repositório:
 
 - **Framework preset:** None
-- **Build command:** deixe vazio
-- **Build output directory:** `/`
+- **Build command:** deixe vazio, ou use `npx wrangler deploy` se o projeto estiver usando o fluxo Workers Static Assets
+- **Build output directory:** `public`
 - **Root directory:** `/`
+- **Production branch:** `main`
 
-O `index.html` já está na raiz do repositório e os assets estão em `assets/`.
+O conteúdo público está em `public/`, com `public/index.html` na raiz do diretório de saída. O `wrangler.jsonc` aponta explicitamente para essa pasta para evitar o upload de `.git` ou arquivos de configuração como assets do site.
